@@ -2,9 +2,9 @@
 
 ## Team Members
 - Member 1: Tanisha Arora (Project Coordination, Documentation, GitHub Management)
-- Member 2: Data Handling & Preprocessing
-- Member 3: Data Analysis & Visualization
-- Member 4: Machine Learning Model Development
+- Member 2: Faith Edet Mubek- Data Handling & Preprocessing
+- Member 3: Diece Nshimirimana- Data Analysis & Visualization
+- Member 4: Blessing Dediare-Machine Learning Model Development
 
 ---
 
