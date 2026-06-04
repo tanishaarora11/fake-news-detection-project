@@ -19,9 +19,8 @@ The rapid spread of online news has made it difficult to verify the authenticity
 ---
 
 ## Datasets Used
-- ISOT Fake and Real News Dataset  
-- WELFake Dataset  
-- Kaggle Fake News Classification Dataset  
+ - WELFake Dataset  
+
 
 ---
 
