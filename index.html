@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fake News Detector</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 600px; }
+    h1 { font-size: 24px; margin-bottom: 8px; color: #1a1a1a; }
+    p { color: #666; margin-bottom: 24px; font-size: 14px; }
+    textarea { width: 100%; height: 120px; padding: 14px; border: 1.5px solid #ddd; border-radius: 10px; font-size: 15px; resize: none; outline: none; }
+    textarea:focus { border-color: #4f46e5; }
+    button { width: 100%; margin-top: 16px; padding: 14px; background: #4f46e5; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #4338ca; }
+    .result { margin-top: 24px; padding: 20px; border-radius: 10px; text-align: center; display: none; }
+    .result.fake { background: #fef2f2; border: 2px solid #fca5a5; }
+    .result.real { background: #f0fdf4; border: 2px solid #86efac; }
+    .result-label { font-size: 28px; font-weight: bold; margin-bottom: 6px; }
+    .result.fake .result-label { color: #dc2626; }
+    .result.real .result-label { color: #16a34a; }
+    .result-conf { font-size: 14px; color: #666; }
+    .loading { text-align: center; margin-top: 20px; color: #666; display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔍 Fake News Detector</h1>
+    <p>Paste any news headline or article below and our AI will detect if it's fake or real.</p>
+    <textarea id="text" placeholder="e.g. Scientists discover cure for cancer using bananas..."></textarea>
+    <button onclick="checkNews()">Check News</button>
+    <div class="loading" id="loading">Analysing...</div>
+    <div class="result" id="result">
+      <div class="result-label" id="label"></div>
+      <div class="result-conf" id="conf"></div>
+    </div>
+  </div>
+  <script>
+    async function checkNews() {
+      const text = document.getElementById('text').value.trim();
+      if (!text) { alert('Please enter some text!'); return; }
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('result').style.display = 'none';
+      const res = await fetch('/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+      const data = await res.json();
+      document.getElementById('loading').style.display = 'none';
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.className = 'result ' + data.label.toLowerCase();
+      document.getElementById('label').textContent = data.label === 'FAKE' ? '🚨 FAKE NEWS' : '✅ REAL NEWS';
+      document.getElementById('conf').textContent = `AI is ${data.confidence}% confident`;
+    }
+  </script>
+</body>
+</html>
