@@ -10,6 +10,5 @@
 To analyze news articles and classify them as fake or real using machine learning techniques.
 
 ## Datasets
-- ISOT Fake and Real News Dataset
 - WELFake Dataset
-- Kaggle Fake News Dataset
+
