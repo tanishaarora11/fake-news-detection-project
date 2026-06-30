@@ -1,3 +1,5 @@
+**Fake News Detection and Classification System Using Machine Learning
+
 ##Team Members & Responsibilities
 
 #Tanisha Arora
@@ -40,7 +42,7 @@ Data Analysis, Visualization & Presentation
 - Assisted with project documentation.
 - Designed and prepared the final project presentation.
 - Contributed to interpreting and presenting project results.
-- - Prepared technical documentation, project methodology, and final project integration.
+- Prepared technical documentation, project methodology, and final project integration.
 
 ---
 
