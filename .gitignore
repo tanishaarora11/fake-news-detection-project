@@ -1,0 +1,10 @@
+# Virtual environment
+venv/
+
+# Generated/large files — regenerate by running 01_eda.ipynb (see README)
+data/
+models/
+
+# Python cache
+__pycache__/
+*.pyc
