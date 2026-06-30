@@ -12,7 +12,6 @@ Project Coordinator | AI & Machine Learning Development
 - Implemented Natural Language Processing (NLP) techniques for text preprocessing.
 - Developed and integrated the machine learning models.
 - Performed feature extraction using TF-IDF vectorization.
-- Assisted in model selection, training, and performance optimization.
 - Integrated the trained model with the Flask web application.
 - Conducted model testing, validation, and debugging.
 
@@ -43,6 +42,7 @@ Data Analysis, Visualization & Presentation
 - Designed and prepared the final project presentation.
 - Contributed to interpreting and presenting project results.
 - Prepared technical documentation, project methodology, and final project integration.
+- collaborated on model training and testing.
 
 ---
 
